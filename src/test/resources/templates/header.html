@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:fragment="header">
+  <div class="ats-headerLeft">
+    <div class="logo-container">
+      <img src="images/ats.png" alt="Business Logo" />
+    </div>
+    <div class="ats-company-details ats-float-left ats-bold-text">
+      <div class="ats-top-title" th:text="${reportData.reportType}"></div>
+      <div class="ats-contract"><th:block th:text="#{report.contract.title} + ' '"></th:block><span th:text="${#temporals.format(reportData.begins, 'dd.MM.yyyy')}"></span> – <span th:text="${#temporals.format(reportData.ends, 'dd.MM.yyyy')}"></span></div>
+    </div>
+  </div>
+  <div class="ats-headerRight">
+    <div class="ats-agreement">
+      <div class="ats-agreement-name" th:text="#{report.contract.id}"></div>
+      <div class="ats-agreement-number" th:text="${reportData.contractId}"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

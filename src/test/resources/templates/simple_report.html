@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="ats-report">
+  <div th:insert="footer::footer"></div>
+  <div class="ats-attachment-border">
+    <div class="ats-attachment-text" th:text="${reportData.text}"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "contractId":"2116487",
+  "begins":"2021-07-01T12:00:00",
+  "ends":"2031-06-30T12:00:00",
+  "aviationContractType":"TechPlus",
+  "serviceProvider":{
+    "name":"AeroTech Solutions Ltd",
+    "organizationId":"1234567-8",
+    "vatId":"FI12345678",
+    "homeLocation":"Aviation Avenue",
+    "phoneNumber":"1234",
+    "address":"123 Aviation Avenue\nKarvina, Czech Republic"
+  },
+  "aircraftOwner":{
+    "accountName":"FRANCK TUULA",
+    "customerId":"187386",
+    "phoneNumber":"1234",
+    "vatId":"2148216-8",
+    "address":"--\nSKYHIGH STREET 11 B 23\n02700 CLOUDTOWN"
+  },
+  "contactPerson":null,
+  "aircraftAssets":[
+    {
+      "make":"Boeing",
+      "model":"737",
+      "tailNumber":"N123AB",
+      "serialNumber":"123456",
+      "registration":"OH-LVM",
+      "hoursFlown":5000
+    },
+    {
+      "make":"Airbus",
+      "model":"A320",
+      "tailNumber":"N456CD",
+      "serialNumber":"789012",
+      "registration":"OH-ABC",
+      "hoursFlown":7000
+    }
+  ],
+  "realizedCosts":0.0
+}
