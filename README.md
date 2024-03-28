@@ -40,7 +40,7 @@ mvn install
 ## Issues detected during implementation
 1. While searching for the root cause of the **letter spacing** CSS, we found an error – explanation available [here](https://github.com/danfickle/openhtmltopdf/issues/228#issuecomment-408588612)
 2. We had to update to the latest version of the pdfbox library, because the OpenToHtmlPdf library that was used contained an old version of pdfbox library containing critical errors. An example of such an error:
-   [here](https://github.com/danfickle/openhtmltopdf/issues/228#issuecomment-408588612)
+   [here](https://devhub.checkmarx.com/cve-details/CVE-2018-8036/?utm_source=jetbrains&utm_medium=referral&utm_campaign=idea)
 
     This is why we had to add the following code into dependencies:
 ```xml
