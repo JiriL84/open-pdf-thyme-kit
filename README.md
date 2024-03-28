@@ -15,7 +15,7 @@ This project demonstrates how to generate PDF reports from HTML templates in Jav
 - `org.apache.pdfbox` for working with PDF documents, including merging.
 - `org.thymeleaf` for HTML template processing.
 - `org.springframework` for overall application framework.
-- `jasckon` for JSON processing into Java objects.
+- `jackson` for JSON processing into Java objects.
 
 ## Prerequisites
 
