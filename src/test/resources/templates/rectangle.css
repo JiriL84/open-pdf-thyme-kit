@@ -1,21 +1,21 @@
 .ats-rectangle-short {
   width: 2px;
   height: 24px;
-  background: #118BD6;
+  background: #188ed7;
   float: left;
 }
 
 .ats-rectangle-middle {
   width: 2px;
   height: 48px;
-  background: #118BD6;
+  background: #188ed7;
   float: left;
 }
 
 .ats-rectangle-long {
   width: 6px;
   height: 75px;
-  background: #118BD6;
+  background: #188ed7;
   float: left;
 }
 
@@ -25,12 +25,12 @@
   height: 128px;
   left: 56px;
   top: 524px;
-  background: #118BD6;
+  background: #188ed7;
 }
 
 
 .ats-rectangle-light-blue {
-  background-color: #D9EBF7;
+  background-color: #e1f1fc;
 }
 
 .ats-rectangle-next-table {
@@ -144,29 +144,28 @@
   height: 15px;
 }
 
-.ats-rectangle-table-yellow {
-  margin-top: 5px;
+.ats-rectangle-table-blue {
+  margin-top: 20px;
   width: 350px;
   height: 60px;
-  background-color: #FED647;
-  margin-right: 27px;
+  background-color: #d6e8ff;
   float: right;
   padding: 10px;
   font-family: "Helvetica Neue Bold";
 }
 
-.ats-rectangle-table-yellow .ats-title {
+.ats-rectangle-table-blue .ats-title {
   font-size: 11px;
   line-height: 10px;
   text-align: left;
 }
 
-.ats-rectangle-table-yellow .ats-total {
+.ats-rectangle-table-blue .ats-total {
   font-size: 27px;
   line-height: 29px;
   text-align: right;
 }
 
-.ats-rectangle-table-yellow .ats-total-padding {
+.ats-rectangle-table-blue .ats-total-padding {
   padding-right: 5px;
 }

@@ -1,158 +1,167 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="rectangle.css" />
-  <link rel="stylesheet" href="table.css" />
+    <title>Ats report</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="rectangle.css"/>
+    <link rel="stylesheet" href="table.css"/>
 </head>
 <body>
 <div class="ats-report">
-  <div th:insert="header::header"></div>
-  <div th:insert="footer::footer"></div>
-  <div class="ats-main-page-text">
-    <div class="ats-rectangle-main-page"></div>
-    <div th:text="#{common.company.name}"
-         class="ats-base-text ats-bold-text">
-    </div>
-    <div class="ats-date-name">
-      <div class="ats-date">21.3.2024</div>
-    </div>
-  </div>
-  <div class="ats-page" style="page-break-before: always;">
-    <div class="ats-container">
-      <div class="ats-rectangle-short"></div>
-      <div th:text="#{report.ats.service.notification.general.information}"
-           class="ats-top-title ats-bold-text"></div>
-      <br />
-      <div th:text="#{report.ats.service.notification.services.provider}" class="ats-table-name"></div>
-      <table class="ats-table-without-border">
-        <tr>
-          <th th:text="#{report.ats.service.notification.name}"></th>
-          <th th:text="#{report.ats.service.notification.vat.id}"></th>
-          <th th:text="#{report.ats.service.notification.phone}"></th>
-        </tr>
-        <tr>
-          <td th:text="${reportData.serviceProvider.name}"></td>
-          <td th:text="${reportData.serviceProvider.vatId}"></td>
-          <td th:text="${reportData.serviceProvider.phoneNumber}"></td>
-        </tr>
-      </table>
-      <table class="ats-table-without-border ats-last">
-        <tr>
-          <th th:text="#{report.ats.service.notification.company.id}"></th>
-          <th th:text="#{report.ats.service.notification.home.location}"></th>
-          <th th:text="#{report.ats.service.notification.address.street}"></th>
-        </tr>
-        <tr>
-          <td th:text="${reportData.serviceProvider.vatId}"></td>
-          <td th:text="${reportData.serviceProvider.homeLocation}"></td>
-          <td th:text="${reportData.serviceProvider.address}"></td>
-        </tr>
-      </table>
-      <div th:text="#{report.ats.service.notification.aircraft.owner}" class="ats-table-name"></div>
-      <table class="ats-table-without-border">
-        <tr>
-          <th th:text="#{report.ats.service.notification.name}"></th>
-          <th th:text="#{report.ats.service.notification.customer.id}"></th>
-          <th th:text="#{report.ats.service.notification.company.id}"></th>
-        </tr>
-        <tr>
-          <td th:text="${reportData.aircraftOwner.accountName}"></td>
-          <td th:text="${reportData.aircraftOwner.customerId}"></td>
-          <td th:text="${reportData.aircraftOwner.vatId}"></td>
-        </tr>
-      </table>
-      <table
-        th:class="${reportData.contactPerson == null} ? 'ats-table-without-border' : 'ats-table-without-border ats-last'">
-        <tr>
-          <th></th>
-          <th th:text="#{report.ats.service.notification.phone}"></th>
-          <th th:text="#{report.ats.service.notification.address.street}"></th>
-        </tr>
-        <tr>
-          <td></td>
-          <td th:text="${reportData.aircraftOwner.phoneNumber}"></td>
-          <td th:text="${reportData.aircraftOwner.address}"></td>
-        </tr>
-      </table>
-
-      <div class="ats-table-name" th:if="${reportData.contactPerson}"></div>
-      <table class="ats-table-without-border" th:if="${reportData.contactPerson}">
-        <tr>
-          <th th:text="#{report.ats.service.notification.name}"></th>
-          <th th:text="#{report.ats.service.notification.phone}"></th>
-          <th th:text="#{report.ats.service.notification.address.street}"></th>
-        </tr>
-        <tr>
-          <td th:text="${reportData.contactPerson.name}"></td>
-          <td th:text="${reportData.contactPerson.phoneNumber}"</td>
-          <td th:text="${reportData.contactPerson.address}"></td>
-        </tr>
-      </table>
-      <table class="ats-table-without-border" th:if="${reportData.contactPerson != null}">
-        <tr>
-          <th th:text="#{report.ats.service.notification.email}"></th>
-          <th></th>
-          <th></th>
-        </tr>
-        <tr>
-          <td th:text="${reportData.contactPerson.email}"></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <div class="ats-page">
-    <div class="ats-container">
-      <div class="ats-rectangle-short"></div>
-      <div th:text="#{report.ats.service.notification.timber.measurements}"
-           class="ats-top-title ats-bold-text"></div>
-      <br />
-    </div>
-
-    <th:block th:each="aircraftAsset : ${reportData.aircraftAssets}">
-      <div class="ats-header-without-tab"
-           th:text="${aircraftAsset.make} + ' | ' + ${aircraftAsset.model} + ' | ' + ${aircraftAsset.tailNumber}+ ' | ' + ${aircraftAsset.serialNumber}">
-      </div>
-      <div class="ats-container">
-        <table class="ats-table ats-table-td-white-blue ats-table-td-last-yellow">
-          <thead>
-          <tr>
-            <th th:utext="#{report.ats.service.notification.compartment}"></th>
-            <th th:utext="#{report.ats.service.notification.area}"></th>
-            <th th:utext="#{report.ats.service.notification.execution.date}"></th>
-            <th th:utext="#{report.ats.service.notification.type.of.work}"></th>
-            <th th:utext="#{report.ats.service.notification.specifier}"></th>
-            <th th:utext="#{report.ats.service.notification.estimated.quantity}"></th>
-            <th th:utext="#{report.ats.service.notification.realized.quantity}"></th>
-            <th th:utext="#{report.ats.service.notification.unit}"></th>
-            <th th:utext="#{report.ats.service.notification.unit.price.euro}"></th>
-            <th>
-              <th:block th:text="#{report.ats.service.notification.total.price}"></th:block>
-              <br />
-              <div class="ats-txt-align-right">€</div>
-            </th>
-
-          </tr>
-          </thead>
-
-
-        </table>
-
-        <div class="ats-rectangle-under-table ats-bold-text">
-          <span th:text="#{report.ats.service.notification.summary}" class="ats-rectangle-name"></span>
-          <span class="ats-total-price" th:text="${aircraftAsset.hoursFlown} + ' €'">3214.84 €</span>
+    <div th:insert="header::header"></div>
+    <div th:insert="footer::footer"></div>
+    <div class="ats-main-page-text">
+        <div class="ats-rectangle-main-page"></div>
+        <div th:text="#{common.company.name}"
+             class="ats-base-text ats-bold-text">
         </div>
-      </div>
-    </th:block>
-    <div class="ats-prices-volume-sum">
-      <div class="ats-rectangle-table-yellow">
-        <div th:text="#{report.ats.service.notification.realized.expenses}" class="ats-rectangle-name"></div>
-        <div class="ats-total-price" th:text="${reportData.realizedCosts} + ' €'">5750 €</div>
-      </div>
+        <div class="ats-date-name">
+            <div class="ats-date">21.3.2024</div>
+        </div>
     </div>
-  </div>
+    <div class="ats-page" style="page-break-before: always;">
+        <div class="ats-container">
+            <div class="ats-rectangle-short"></div>
+            <div th:text="#{report.ats.service.notification.general.information}"
+                 class="ats-top-title ats-bold-text"></div>
+            <br/>
+            <div th:text="#{report.ats.service.notification.services.provider}" class="ats-table-name"></div>
+            <table class="ats-table-without-border">
+                <tr>
+                    <th th:text="#{report.ats.service.notification.name}"></th>
+                    <th th:text="#{report.ats.service.notification.vat.id}"></th>
+                    <th th:text="#{report.ats.service.notification.phone}"></th>
+                </tr>
+                <tr>
+                    <td th:text="${reportData.serviceProvider.name}"></td>
+                    <td th:text="${reportData.serviceProvider.vatId}"></td>
+                    <td th:text="${reportData.serviceProvider.phoneNumber}"></td>
+                </tr>
+            </table>
+            <table class="ats-table-without-border ats-last">
+                <tr>
+                    <th th:text="#{report.ats.service.notification.company.id}"></th>
+                    <th th:text="#{report.ats.service.notification.home.location}"></th>
+                    <th th:text="#{report.ats.service.notification.address.street}"></th>
+                </tr>
+                <tr>
+                    <td th:text="${reportData.serviceProvider.vatId}"></td>
+                    <td th:text="${reportData.serviceProvider.homeLocation}"></td>
+                    <td th:text="${reportData.serviceProvider.address}"></td>
+                </tr>
+            </table>
+            <div th:text="#{report.ats.service.notification.aircraft.owner}" class="ats-table-name"></div>
+            <table class="ats-table-without-border">
+                <tr>
+                    <th th:text="#{report.ats.service.notification.name}"></th>
+                    <th th:text="#{report.ats.service.notification.customer.id}"></th>
+                    <th th:text="#{report.ats.service.notification.company.id}"></th>
+                </tr>
+                <tr>
+                    <td th:text="${reportData.aircraftOwner.accountName}"></td>
+                    <td th:text="${reportData.aircraftOwner.customerId}"></td>
+                    <td th:text="${reportData.aircraftOwner.vatId}"></td>
+                </tr>
+            </table>
+            <table
+                    th:class="${reportData.contactPerson == null} ? 'ats-table-without-border' : 'ats-table-without-border ats-last'">
+                <tr>
+                    <th></th>
+                    <th th:text="#{report.ats.service.notification.phone}"></th>
+                    <th th:text="#{report.ats.service.notification.address.street}"></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td th:text="${reportData.aircraftOwner.phoneNumber}"></td>
+                    <td th:text="${reportData.aircraftOwner.address}"></td>
+                </tr>
+            </table>
+
+            <div class="ats-table-name" th:if="${reportData.contactPerson}"></div>
+            <table class="ats-table-without-border" th:if="${reportData.contactPerson}">
+                <tr>
+                    <th th:text="#{report.ats.service.notification.name}"></th>
+                    <th th:text="#{report.ats.service.notification.phone}"></th>
+                    <th th:text="#{report.ats.service.notification.address.street}"></th>
+                </tr>
+                <tr>
+                    <td th:text="${reportData.contactPerson.name}"></td>
+                    <td th:text="${reportData.contactPerson.phoneNumber}"></td>
+                    <td th:text="${reportData.contactPerson.address}"></td>
+                </tr>
+            </table>
+            <table class="ats-table-without-border" th:if="${reportData.contactPerson != null}">
+                <tr>
+                    <th th:text="#{report.ats.service.notification.email}"></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td th:text="${reportData.contactPerson.email}"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="ats-page">
+        <div class="ats-container">
+            <div class="ats-rectangle-short"></div>
+            <div th:text="#{report.ats.service.notification.company.aircraft}"
+                 class="ats-top-title ats-bold-text"></div>
+            <br/>
+        </div>
+
+        <th:block th:each="aircraftAsset : ${reportData.aircraftAssets}">
+            <div class="ats-header-without-tab"
+                 th:text="${aircraftAsset.make} + ' | ' + ${aircraftAsset.model} + ' | ' + ${aircraftAsset.tailNumber}+ ' | ' + ${aircraftAsset.serialNumber}">
+            </div>
+            <div class="ats-container">
+                <table class="ats-table ats-table-td-white-blue">
+                    <thead>
+                    <tr>
+                        <th th:text="#{report.ats.service.notification.garageNumber}"></th>
+                        <th th:text="#{report.ats.service.notification.registration}"></th>
+                        <th th:text="#{report.ats.service.notification.yearOfManufacture}"></th>
+                        <th th:text="#{report.ats.service.notification.lastMaintenance}"></th>
+                        <th th:text="#{report.ats.service.notification.status}"></th>
+                        <th th:text="#{report.ats.service.notification.MaintenanceDue}"></th>
+                        <th th:text="#{report.ats.service.notification.location}"></th>
+                        <th>
+                            <th:block th:text="#{report.ats.service.notification.hoursFlown}"></th:block>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td th:text="${aircraftAsset.garageNumber}"></td>
+                        <td th:text="${aircraftAsset.registration}"></td>
+                        <td th:text="${aircraftAsset.yearOfManufacture}"></td>
+                        <td th:text="${aircraftAsset.lastMaintenance}"></td>
+                        <td th:text="${aircraftAsset.status}"></td>
+                        <td th:text="${aircraftAsset.MaintenanceDue}"></td>
+                        <td th:text="${aircraftAsset.location}"></td>
+                        <td th:text="${aircraftAsset.hoursFlown}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="ats-rectangle-under-table ats-bold-text">
+                    <span th:text="#{report.ats.service.notification.maintenanceCost}"
+                          class="ats-rectangle-name"></span>
+                    <span class="ats-total-price">25000 €</span>
+                </div>
+            </div>
+        </th:block>
+
+        <div class="ats-prices-volume-sum">
+            <div class="ats-rectangle-table-blue">
+                <div th:text="#{report.ats.service.notification.realized.expenses}" class="ats-rectangle-name"></div>
+                <br />
+                <div class="ats-total-price" th:text="${reportData.realizedCosts} + ' €'">5750 €</div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

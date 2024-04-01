@@ -32,9 +32,9 @@ public class TestAtsServiceNotification extends BasePDFReportTest {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    AtsServiceReportDataMapperTest forestServiceReportDataMapperTest =
+    AtsServiceReportDataMapperTest AtsServiceReportDataMapperTest =
         new AtsServiceReportDataMapperTest();
-    reportData = forestServiceReportDataMapperTest.apply(ri);
+    reportData = AtsServiceReportDataMapperTest.apply(ri);
   }
 
   @Override

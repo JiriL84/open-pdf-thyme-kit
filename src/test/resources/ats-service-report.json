@@ -1,41 +1,81 @@
 {
-  "contractId":"2116487",
-  "begins":"2021-07-01T12:00:00",
-  "ends":"2031-06-30T12:00:00",
-  "aviationContractType":"TechPlus",
-  "serviceProvider":{
-    "name":"AeroTech Solutions Ltd",
-    "organizationId":"1234567-8",
-    "vatId":"FI12345678",
-    "homeLocation":"Aviation Avenue",
-    "phoneNumber":"1234",
-    "address":"123 Aviation Avenue\nKarvina, Czech Republic"
+  "contractId": "2116487",
+  "begins": "2021-07-01T12:00:00",
+  "ends": "2031-06-30T12:00:00",
+  "aviationContractType": "TechPlus",
+  "serviceProvider": {
+    "name": "AeroTech Solutions Ltd",
+    "organizationId": "1234567-8",
+    "vatId": "FI12345678",
+    "homeLocation": "Aviation Avenue",
+    "phoneNumber": "1234",
+    "address": "123 Aviation Avenue\nKarvina, Czech Republic"
   },
-  "aircraftOwner":{
-    "accountName":"FRANCK TUULA",
-    "customerId":"187386",
-    "phoneNumber":"1234",
-    "vatId":"2148216-8",
-    "address":"--\nSKYHIGH STREET 11 B 23\n02700 CLOUDTOWN"
+  "aircraftOwner": {
+    "accountName": "FRANCK TUULA",
+    "customerId": "187386",
+    "phoneNumber": "1234",
+    "vatId": "2148216-8",
+    "address": "--\nSKYHIGH STREET 11 B 23\n02700 CLOUDTOWN"
   },
-  "contactPerson":null,
-  "aircraftAssets":[
+  "contactPerson": null,
+  "aircraftAssets": [
     {
-      "make":"Boeing",
-      "model":"737",
-      "tailNumber":"N123AB",
-      "serialNumber":"123456",
-      "registration":"OH-LVM",
-      "hoursFlown":5000
+      "make": "Boeing",
+      "model": "737",
+      "tailNumber": "N123AB",
+      "serialNumber": "123456",
+      "registration": "OH-LVM",
+      "yearOfManufacture": 2017,
+      "lastMaintenance": "2023-11-20",
+      "status": "Operational",
+      "maintenanceDue": "2024-11-20",
+      "location": "Prague",
+      "garageNumber": "G1",
+      "hoursFlown": 5000
     },
     {
-      "make":"Airbus",
-      "model":"A320",
-      "tailNumber":"N456CD",
-      "serialNumber":"789012",
-      "registration":"OH-ABC",
-      "hoursFlown":7000
+      "make": "Airbus",
+      "model": "A320",
+      "tailNumber": "N456CD",
+      "serialNumber": "789012",
+      "registration": "OH-ABC",
+      "yearOfManufacture": 2015,
+      "lastMaintenance": "2023-10-15",
+      "status": "Operational",
+      "maintenanceDue": "2024-10-15",
+      "location": "Brno",
+      "garageNumber": "G2",
+      "hoursFlown": 7000
+    },
+    {
+      "make": "Embraer",
+      "model": "E195",
+      "tailNumber": "N789GH",
+      "serialNumber": "567890",
+      "registration": "OH-DEF",
+      "yearOfManufacture": 2019,
+      "lastMaintenance": "2023-12-15",
+      "status": "Operational",
+      "maintenanceDue": "2024-12-15",
+      "location": "Ostrava",
+      "garageNumber": "G3",
+      "hoursFlown": 4000
+    },
+    {
+      "make": "Bombardier",
+      "model": "CRJ900",
+      "tailNumber": "N101IJ",
+      "serialNumber": "345678",
+      "registration": "OH-GHI",
+      "yearOfManufacture": 2020,
+      "lastMaintenance": "2024-01-20",
+      "status": "Maintenance Required",
+      "maintenanceDue": "2024-07-20",
+      "location": "Pardubice",
+      "garageNumber": "G4",
+      "hoursFlown": 3000
     }
   ],
-  "realizedCosts":0.0
+  "realizedCosts": 20000
 }

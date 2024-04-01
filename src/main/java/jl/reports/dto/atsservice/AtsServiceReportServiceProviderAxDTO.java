@@ -56,10 +56,25 @@ public class AtsServiceReportServiceProviderAxDTO {
 
   @Override
   public String toString() {
-    return "ForestServiceReportServiceProviderAxDTO{" + "name='" + name + '\''
-        + ", organizationId='"
-        + organizationId + '\'' + ", vatId='" + vatId + '\'' + ", homeLocation='" + homeLocation
+    return "AtsServiceReportServiceProviderAxDTO{"
+        + "name='"
+        + name
         + '\''
-        + ", phoneNumber='" + phoneNumber + '\'' + ", address='" + address + '\'' + '}';
+        + ", organizationId='"
+        + organizationId
+        + '\''
+        + ", vatId='"
+        + vatId
+        + '\''
+        + ", homeLocation='"
+        + homeLocation
+        + '\''
+        + ", phoneNumber='"
+        + phoneNumber
+        + '\''
+        + ", address='"
+        + address
+        + '\''
+        + '}';
   }
 }

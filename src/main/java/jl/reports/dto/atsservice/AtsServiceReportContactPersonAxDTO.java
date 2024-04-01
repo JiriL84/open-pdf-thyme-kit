@@ -39,8 +39,13 @@ public class AtsServiceReportContactPersonAxDTO {
         return address;
     }
 
-    @Override public String toString() {
-        return "ForestServiceReportContactPersonAxDTO{" + "name='" + name + '\'' + ", email='" + email + '\''
-                + ", phoneNumber='" + phoneNumber + '\'' + ", address='" + address + '\'' + '}';
+    @Override
+    public String toString() {
+        return "AtsServiceReportContactPersonAxDTO{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

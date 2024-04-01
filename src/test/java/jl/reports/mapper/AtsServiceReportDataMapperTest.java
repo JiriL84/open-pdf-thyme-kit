@@ -46,18 +46,24 @@ public class AtsServiceReportDataMapperTest {
       .build();
 
   public static final Function<AtsServiceReportAircraftAssetsAxDTO, AtsServiceReportAircraftAssetsData>
-      TO_AIRCRAFT_ASSETS = aircraftAssetsAxDTO -> AtsServiceReportAircraftAssetsDataBuilder.builder()
-      .make(aircraftAssetsAxDTO.getMake())
-      .model(aircraftAssetsAxDTO.getModel())
-      .tailNumber(aircraftAssetsAxDTO.getTailNumber())
-      .serialNumber(aircraftAssetsAxDTO.getSerialNumber())
-      .registration(aircraftAssetsAxDTO.getRegistration())
-      .hoursFlown(aircraftAssetsAxDTO.getHoursFlown())
-      .build();
+          TO_AIRCRAFT_ASSETS = aircraftAssetsAxDTO -> AtsServiceReportAircraftAssetsDataBuilder.builder()
+          .make(aircraftAssetsAxDTO.getMake())
+          .model(aircraftAssetsAxDTO.getModel())
+          .tailNumber(aircraftAssetsAxDTO.getTailNumber())
+          .serialNumber(aircraftAssetsAxDTO.getSerialNumber())
+          .registration(aircraftAssetsAxDTO.getRegistration())
+          .yearOfManufacture(aircraftAssetsAxDTO.getYearOfManufacture())
+          .lastMaintenance(aircraftAssetsAxDTO.getLastMaintenance())
+          .status(aircraftAssetsAxDTO.getStatus())
+          .maintenanceDue(aircraftAssetsAxDTO.getMaintenanceDue())
+          .location(aircraftAssetsAxDTO.getLocation())
+          .garageNumber(aircraftAssetsAxDTO.getGarageNumber())
+          .hoursFlown(aircraftAssetsAxDTO.getHoursFlown())
+          .build();
 
   public AtsServiceReportData apply(AtsServiceReportAxDTO reportAxDTO) {
     return AtsServiceReportDataBuilder.builder()
-        .reportType(reportAxDTO.getForestContractType())
+        .reportType(reportAxDTO.getAtsContractType())
         .contractId(reportAxDTO.getContractId())
         .ends(reportAxDTO.getEnds())
         .begins(reportAxDTO.getBegins())

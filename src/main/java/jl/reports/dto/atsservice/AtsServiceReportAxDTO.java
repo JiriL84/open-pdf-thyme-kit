@@ -12,14 +12,17 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public final class AtsServiceReportAxDTO {
 
-  private final String forestContractType;
+  private final String atsContractType;
   private final String contractId;
+
   @JsonDeserialize(using = LocalDateTimeDeserializer.class)
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   private final LocalDateTime begins;
+
   @JsonDeserialize(using = LocalDateTimeDeserializer.class)
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
   private final LocalDateTime ends;
+
   private final AtsServiceReportServiceProviderAxDTO serviceProvider;
   private final AtsServiceReportAircraftOwnerAxDTO aircraftOwner;
   private final AtsServiceReportContactPersonAxDTO contactPerson;
@@ -28,7 +31,7 @@ public final class AtsServiceReportAxDTO {
 
   @JsonCreator
   public AtsServiceReportAxDTO(
-      @JsonProperty("forestContractType") String forestContractType,
+      @JsonProperty("aviationContractType") String atsContractType,
       @JsonProperty("contractId") String contractId,
       @JsonProperty("begins") LocalDateTime begins,
       @JsonProperty("ends") LocalDateTime ends,
@@ -37,7 +40,7 @@ public final class AtsServiceReportAxDTO {
       @JsonProperty("contactPerson") AtsServiceReportContactPersonAxDTO contactPerson,
       @JsonProperty("aircraftAssets") List<AtsServiceReportAircraftAssetsAxDTO> aircraftAssets,
       @JsonProperty("realizedCosts") Double realizedCosts) {
-    this.forestContractType = forestContractType;
+    this.atsContractType = atsContractType;
     this.contractId = contractId;
     this.begins = begins;
     this.ends = ends;
@@ -48,8 +51,8 @@ public final class AtsServiceReportAxDTO {
     this.realizedCosts = realizedCosts;
   }
 
-  public String getForestContractType() {
-    return forestContractType;
+  public String getAtsContractType() {
+    return atsContractType;
   }
 
   public String getContractId() {
@@ -86,16 +89,27 @@ public final class AtsServiceReportAxDTO {
 
   @Override
   public String toString() {
-    return "ForestServiceReportAxDTO{" +
-        "forestContractType='" + forestContractType + '\'' +
-        ", contractId='" + contractId + '\'' +
-        ", begins=" + begins +
-        ", ends=" + ends +
-        ", serviceProvider=" + serviceProvider +
-        ", aircraftOwner=" + aircraftOwner +
-        ", contactPerson=" + contactPerson +
-        ", aircraftAssets=" + aircraftAssets +
-        ", realizedCosts=" + realizedCosts +
-        '}';
+    return "AtsServiceReportAxDTO{"
+        + "atsContractType='"
+        + atsContractType
+        + '\''
+        + ", contractId='"
+        + contractId
+        + '\''
+        + ", begins="
+        + begins
+        + ", ends="
+        + ends
+        + ", serviceProvider="
+        + serviceProvider
+        + ", aircraftOwner="
+        + aircraftOwner
+        + ", contactPerson="
+        + contactPerson
+        + ", aircraftAssets="
+        + aircraftAssets
+        + ", realizedCosts="
+        + realizedCosts
+        + '}';
   }
 }

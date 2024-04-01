@@ -21,11 +21,11 @@
 }
 
 .ats-table th, .ats-table td {
-  border-bottom: 0.5px solid #BFDEF1;
+  border-bottom: 0.5px solid #c1deef;
 }
 
 .ats-table-td-last-blue td:last-child {
-  background-color: #F3F9FD;
+  background-color: #eef8fd;
 }
 
 .ats-table-td-last-right td:last-child, .ats-table-td-last-right th:last-child {
@@ -57,7 +57,7 @@
 }
 
 .ats-table-td-blue {
-  background-color: #F3F9FD;
+  background-color: #f7fcff;
 }
 
 .ats-table-text-center {
@@ -86,7 +86,7 @@
 
 .ats-table-td-last-yellow td:last-child,
 .ats-table-td-white-blue td.ats-table-td-yellow {
-  background-color: #FED647;
+  background-color: #ffd84b;
   border-bottom: 0.5px solid #FFF;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .ats-table-half-width td {
-  border-bottom: 0.5px solid #118BD6;
+  border-bottom: 0.5px solid #128bd5;
 }
 
 .ats-table-half-width img {
@@ -130,7 +130,7 @@
 
 .ats-table-half-width th:nth-child(2), .ats-table-half-width th:nth-child(3),
 .ats-table-half-width td:nth-child(2), .ats-table-half-width td:nth-child(3) {
-  background-color: #f2f8fc;
+  background-color: #f3f7fa;
 }
 
 .ats-table-half-width td, .ats-table-half-width th {
