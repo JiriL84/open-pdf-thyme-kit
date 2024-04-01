@@ -1,7 +1,6 @@
 package jl.reports;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,37 +11,36 @@ import jl.reports.atsservice.AtsServiceReportData;
 import jl.reports.dto.atsservice.AtsServiceReportAxDTO;
 import jl.reports.mapper.AtsServiceReportDataMapperTest;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 
-public class TestForestServiceReport {
+public class TestAtsServiceNotification extends BasePDFReportTest {
 
   private static final String PDF_PATH =
       "./target/pdfs/ats_service_notification/ats_service_notification.pdf";
   private static final String JSON_FILE_NAME = "ats-service-report.json";
-
-  private File pdfFile;
   private AtsServiceReportData reportData;
 
-  @Before
-  public void initPDFAndReportGeneration() throws IOException {
-    AtsServiceReportAxDTO ri =
-        new ObjectMapper()
-            .readValue(
-                new ClassPathResource(JSON_FILE_NAME).getFile(), AtsServiceReportAxDTO.class);
+  @Override
+  protected void initializeData() {
+    AtsServiceReportAxDTO ri;
+    try {
+      ri =
+          new ObjectMapper()
+              .readValue(
+                  new ClassPathResource(JSON_FILE_NAME).getFile(), AtsServiceReportAxDTO.class);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
     AtsServiceReportDataMapperTest forestServiceReportDataMapperTest =
         new AtsServiceReportDataMapperTest();
     reportData = forestServiceReportDataMapperTest.apply(ri);
-
-    TestUtils.makeFolderWithReport(PdfReportTemplate.ATS_SERVICE_NOTIFICATION, reportData);
-    pdfFile = new File(PDF_PATH);
   }
 
-  @Test
-  public void testPDFFileExist() {
-    assertTrue("PDF file doesn't exist", pdfFile.exists());
+  @Override
+  protected void generatePDFReport() {
+    TestUtils.makeFolderWithReport(PdfReportTemplate.ATS_SERVICE_NOTIFICATION, reportData);
+    pdfFile = new File(PDF_PATH);
   }
 
   @Test
@@ -76,36 +74,14 @@ public class TestForestServiceReport {
     }
   }
 
-  @Test
-  public void testCheckContentInPDF() {
-    /*assertTrue(
-        "PDF doesn't contain the expected text",
-        TestUtils.containTextInPDF(createExpectedText(reportData), pdfFile));*/
-  }
-
-  @After
-  public void testDeletePDF() {
-    //  TestUtils.deleteFile(pdfFile);
-    //  assertFalse("PDF file still exists", pdfFile.exists());
-  }
-
-  private String createExpectedText(AtsServiceReportData reportData) {
+  @Override
+  protected String createExpectedText() {
     DateTimeFormatter dTF = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
-    StringBuilder expectedText = new StringBuilder();
-    expectedText.append(reportData.getReportType());
-    expectedText.append("");
-    expectedText.append(reportData.getBegins().format(dTF));
-    expectedText.append(" ");
-    expectedText.append(reportData.getEnds().format(dTF));
-    expectedText.append("");
-    expectedText.append(reportData.getContractId());
-    expectedText.append("");
-    expectedText.append(reportData.getServiceProvider().getAddress());
-    expectedText.append("");
-    expectedText.append("");
-    expectedText.append("");
+    // TODO add expected text
 
-    return expectedText.toString();
+    // String expectedText = "??";
+
+    return " ";
   }
 }
